@@ -14,7 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const functions_1 = require("./functions");
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production')
+    require('dotenv').config();
 const Client_1 = __importDefault(require("./client/Client"));
 const { prefix } = require('./config.json');
 const bot = new Client_1.default();

@@ -1,6 +1,8 @@
 import { Collection, Message } from "discord.js";
 import { createRoleEmojiObject, AssignRoles } from './functions';
-require('dotenv').config();
+
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+
 import Client from './client/Client';
 const { prefix } = require('./config.json');
 
