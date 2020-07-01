@@ -4,7 +4,8 @@ import { createRoleEmojiObject, AssignRoles } from './functions';
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 import Client from './client/Client';
-const { prefix } = require('./config.json');
+import { prefix as configPrefix } from './config.json';
+let prefix = process.env.BOT_PREFIX || configPrefix
 
 const bot = new Client();
 bot.commands = new Collection();
