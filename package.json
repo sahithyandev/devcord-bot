@@ -4,7 +4,7 @@
   "description": "Discord bot for DevCord server",
   "main": "bot.js",
   "scripts": {
-    "build": "tsc -p .",
+    "ts-build": "tsc -p .",
     "dev": "concurrently \"tsc -w\" \"nodemon build/bot.js\"",
     "start": "node build/bot.js"
   },
