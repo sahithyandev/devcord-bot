@@ -19,6 +19,8 @@
     "@types/node": "^14.0.14",
     "@types/ws": "^7.2.5",
     "discord.js": "^12.2.0",
+    "ffmpeg": "0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
     "ytdl-core": "^2.1.7"
   },
   "devDependencies": {
