@@ -62,7 +62,7 @@ bot.on('message', (message) => __awaiter(void 0, void 0, void 0, function* () {
     if (!message.content.startsWith(prefix))
         return;
     try {
-        if (["play", "stop"].includes(commandName))
+        if (["play", "stop", "help", "available_songs"].includes(commandName))
             command.execute(message);
     }
     catch (error) {

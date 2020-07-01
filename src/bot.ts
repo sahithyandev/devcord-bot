@@ -54,7 +54,7 @@ bot.on('message', async (message: Message) => {
     if (!message.content.startsWith(prefix)) return;
     
     try {
-        if (["play", "stop"].includes(commandName)) command.execute(message);
+        if (["play", "stop", "help", "available_songs"].includes(commandName)) command.execute(message);
     } catch (error) {
         console.error(error);
         message.reply('There is an error');
