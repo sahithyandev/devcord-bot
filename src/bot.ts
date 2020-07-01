@@ -12,6 +12,7 @@ bot.commands = new Collection();
 
 // load commands
 import commands from "./commands";
+import { brotliCompressSync } from "zlib";
 commands.forEach(command => {
     bot.commands.set(command.name, command);
 })
@@ -55,7 +56,8 @@ bot.on('message', async (message: Message) => {
     if (!message.content.startsWith(prefix)) return;
     
     try {
-        if (["play", "stop", "help", "available_songs"].includes(commandName)) command.execute(message);
+        
+        if (bot.commands.keyArray().includes(commandName)) command.execute(message);
     } catch (error) {
         console.error(error);
         message.reply('There is an error');

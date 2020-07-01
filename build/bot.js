@@ -17,7 +17,8 @@ const functions_1 = require("./functions");
 if (process.env.NODE_ENV !== 'production')
     require('dotenv').config();
 const Client_1 = __importDefault(require("./client/Client"));
-const { prefix } = require('./config.json');
+const config_json_1 = require("./config.json");
+let prefix = process.env.BOT_PREFIX || config_json_1.prefix;
 const bot = new Client_1.default();
 bot.commands = new discord_js_1.Collection();
 // load commands
@@ -62,7 +63,7 @@ bot.on('message', (message) => __awaiter(void 0, void 0, void 0, function* () {
     if (!message.content.startsWith(prefix))
         return;
     try {
-        if (["play", "stop", "help", "available_songs"].includes(commandName))
+        if (bot.commands.keyArray().includes(commandName))
             command.execute(message);
     }
     catch (error) {
