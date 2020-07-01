@@ -2,7 +2,7 @@
   "name": "devcord-bot",
   "version": "1.0.0",
   "description": "Discord bot for DevCord server",
-  "main": "bot.js",
+  "main": "build/bot.js",
   "scripts": {
     "ts-build": "tsc -p .",
     "dev": "concurrently \"tsc -w\" \"nodemon build/bot.js\"",
